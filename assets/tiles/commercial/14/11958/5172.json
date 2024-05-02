@@ -1,0 +1,17 @@
+{
+    "features": [
+        {
+            "geometry": { "coordinates": [82.771633, 55.12001], "type": "Point" },
+            "properties": {
+                "direction": { "coordinates": [82.771642, 55.12022], "type": "Point" },
+                "building_id": "70030076318530625",
+                "db_sublayer": "Commercial_model",
+                "model_src": "/assets/models/calibri/calibri.gltf",
+                "db_id": "70000001065167757",
+                "db_region": 1
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

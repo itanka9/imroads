@@ -1,0 +1,23 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "geometry": {
+          "coordinates": [
+            82.93636458925903,
+            55.02497222506409
+          ],
+          "type": "Point"
+        },
+        "properties": {
+          "direction": [
+            82.93637908995152,
+            55.02497328209129
+          ],
+          "linked_ids": ["70030076561324098", "70030076322363650", "70030076561324411"],
+          "db_sublayer": "Immersive_model",
+          "model_src": "/assets/models/SakuraPark3UV_1.glb",
+          "db_id": "70000001069166502"
+        }
+      }]
+}

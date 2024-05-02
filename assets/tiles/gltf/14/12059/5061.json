@@ -1,0 +1,180 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Immersive_model",
+                "model_src": "/assets/models/cube/glb/cube.glb",
+                "db_id": "70000001065167756",
+                "db_region": 3,
+                "custom_model_type": "glb"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Immersive_model",
+                "model_src": "/assets/models/cube/gltf/cube.gltf",
+                "db_id": "70000001065167756",
+                "db_region": 3,
+                "custom_model_type": "gltf"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Immersive_model",
+                "model_src": "/assets/models/cube/gltf_embed/cube.gltf",
+                "db_id": "70000001065167756",
+                "db_region": 3,
+                "custom_model_type": "gltf_embed"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Immersive_model",
+                "model_src": "/assets/models/cube/gltf_compr/cube.gltf",
+                "db_id": "70000001065167756",
+                "db_region": 3,
+                "custom_model_type": "gltf_cube_compr"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Immersive_model",
+                "model_src": "/assets/models/calibri/calibri.gltf",
+                "db_id": "70000001065167756",
+                "db_region": 3,
+                "custom_model_type": "calibri"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Immersive_model",
+                "model_src": "/assets/models/calibri/calibri_duo.gltf",
+                "db_id": "70000001065167756",
+                "db_region": 3,
+                "custom_model_type": "calibri_duo"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Immersive_model",
+                "model_src": "/assets/models/calibri/calibri_basic.gltf",
+                "db_id": "70000001065167756",
+                "db_region": 3,
+                "custom_model_type": "calibri_basic"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

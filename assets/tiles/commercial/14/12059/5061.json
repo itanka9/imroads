@@ -1,0 +1,64 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    84.98739710077643,
+                    56.49761567298738
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        84.98741327784956,
+                        56.497615164064314
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Commercial_model",
+                "model_src": "/assets/models/mikhailovskiyext.glb",
+                "db_id": "70000001065167756",
+                "db_region": 3
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.987267, 56.496654
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "db_label2": "Стёкла и чехлы по низким ценам",
+                "db_sublayer": "Commercial_poi_default",
+                "url_src": "https://ams2-cdn.2gis.com/previews/1114362537983344640/80d16252-a585-4c0b-be06-62ad48579f5e/14/ru/image.png",
+                "poi_category": "cellphone_sale",
+                "db_id": "70000001041709292",
+                "db_region": 3,
+                "db_label": "Алло"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.989330, 56.496724
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "db_sublayer": "Commercial_poi_default",
+                "url_src": "https://ams2-cdn.2gis.com/previews/1128913972251066371/6561e4df-c392-4eb4-b911-a90a15042e7e/14/ru/image.png",
+                "poi_category": "common_store",
+                "db_id": "70000001040641734",
+                "db_region": 3,
+                "db_label": "Soroka Tomsk Jewelry"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

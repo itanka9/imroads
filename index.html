@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2GIS Map API</title>
+        <meta name="description" content="Quickstart with 2GIS Map API" />
+        <style>
+            html,
+            body,
+            #container {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script src="https://jakarta.web-staging.2gis.ru/index.js"></script>
+        <script>
+            const style = 'online';
+            const map = new mapgl.Map('container', {
+                center: [37.625269, 55.749303],
+                zoom: 18,
+                pitch: 45,
+                rotation: 13,
+                maxPitch: 75,
+                enableTrackResize: true,
+                disableAntialiasing: false,
+                key: '4970330e-7f1c-4921-808c-0eb7c4e63001',
+                style: `${self.origin}/out/${style}/`,
+                styleState: {
+                    immersiveRoadsOn: true
+                },
+                styleOptions: {
+                    iconsPath: `${self.origin}/out/${style}/icons/`,
+                    fontsPath: `${self.origin}/out/${style}/fonts/`,
+                    modelsPath: `${self.origin}/out/${style}/models/`,
+                }
+            });
+        </script>
+    </body>
+</html>

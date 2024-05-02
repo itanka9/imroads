@@ -1,0 +1,429 @@
+{
+    "asset": {
+        "copyright": "(C)2022 dayen",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                2,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "calibri_logo_orange",
+            "children": [
+                1
+            ],
+            "translation": [
+                2.0,
+                2.633305788040161,
+                2.0
+            ]
+        },
+        {
+            "name": "calibri_logo_orange:PIV",
+            "mesh": 0,
+            "translation": [
+                -2.0,
+                -2.633305788040161,
+                -2.0
+            ]
+        },
+        {
+            "name": "calibri_logo",
+            "children": [
+                3
+            ],
+            "translation": [
+                0.0,
+                0.6333058476448059,
+                0.0
+            ]
+        },
+        {
+            "name": "calibri_logo:PIV",
+            "mesh": 1,
+            "translation": [
+                0.0,
+                -0.6333058476448059,
+                0.0
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "calibri_logo_orangeShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4,
+                        "TEXCOORD_1": 5
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "calibri_logoShape",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 7,
+                        "POSITION": 8,
+                        "TANGENT": 9,
+                        "TEXCOORD_0": 10,
+                        "TEXCOORD_1": 11
+                    },
+                    "indices": 6,
+                    "mode": 4,
+                    "material": 1
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "glsl_calibri_orange",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "normalTexture": {
+                "index": 1
+            }
+        },
+        {
+            "name": "glsl_calibri",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "baseColorTexture": {
+                    "index": 2
+                },
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "normalTexture": {
+                "index": 1
+            }
+        }
+    ],
+    "textures": [
+        {
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "sampler": 0,
+            "source": 1
+        },
+        {
+            "sampler": 0,
+            "source": 2
+        }
+    ],
+    "images": [
+        {
+            "uri": "calibri_orange.png"
+        },
+        {
+            "uri": "calibri_normal.png"
+        },
+        {
+            "uri": "calibri.png"
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "accessors": [
+        {
+            "name": "calibri_logo_orangeShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 558,
+            "max": [
+                409
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "calibri_logo_orangeShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.9907392859458925,
+                0.9991304278373718,
+                0.9964274764060974
+            ],
+            "min": [
+                -0.9370547533035278,
+                -0.9991304278373718,
+                -0.9960519075393676
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "calibri_logo_orangeShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 4920,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                6.844241619110107,
+                2.883305788040161,
+                6.924509048461914
+            ],
+            "min": [
+                -2.844241142272949,
+                2.383305549621582,
+                -2.924509048461914
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "calibri_logo_orangeShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.9998267889022828,
+                0.9999763369560242,
+                0.8222944140434265,
+                1.0
+            ],
+            "min": [
+                -0.8610373735427856,
+                -0.9999763369560242,
+                -0.8708221316337586,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "calibri_logo_orangeShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.584273099899292,
+                0.6589606404304504
+            ],
+            "min": [
+                0.037203818559646609,
+                0.14307105541229249
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "calibri_logo_orangeShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 3280,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.9659053683280944,
+                0.8627229928970337
+            ],
+            "min": [
+                0.4188360571861267,
+                0.34683340787887576
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "calibri_logoShape#0/indices",
+            "bufferView": 0,
+            "byteOffset": 1116,
+            "componentType": 5123,
+            "count": 558,
+            "max": [
+                409
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "calibri_logoShape#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 9840,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.9370547533035278,
+                0.9991304278373718,
+                0.9964274764060974
+            ],
+            "min": [
+                -0.9907392859458925,
+                -0.9991304278373718,
+                -0.9960519075393676
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "calibri_logoShape#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 14760,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                4.844241142272949,
+                0.8833060264587402,
+                4.924509048461914
+            ],
+            "min": [
+                -4.844241619110107,
+                0.38330602645874026,
+                -4.924509048461914
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "calibri_logoShape#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 6560,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.8610373735427856,
+                0.9999763369560242,
+                0.8222943544387817,
+                1.0
+            ],
+            "min": [
+                -0.9998267889022828,
+                -0.9999763369560242,
+                -0.8708221316337586,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "calibri_logoShape#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 6560,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.584273099899292,
+                0.6589606404304504
+            ],
+            "min": [
+                0.037203818559646609,
+                0.14307105541229249
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "calibri_logoShape#0/vertices/TEXCOORD_1",
+            "bufferView": 3,
+            "byteOffset": 9840,
+            "componentType": 5126,
+            "count": 410,
+            "max": [
+                0.9659053683280944,
+                0.8627229928970337
+            ],
+            "min": [
+                0.4188360571861267,
+                0.34683340787887576
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "mittsu/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 45920,
+            "byteLength": 2232,
+            "target": 34963
+        },
+        {
+            "name": "mittsu/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 13120,
+            "byteLength": 19680,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "mittsu/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 13120,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "mittsu/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 32800,
+            "byteLength": 13120,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "mittsu/data",
+            "byteLength": 48152,
+            "uri": "calibri_duo.bin"
+        }
+    ]
+}

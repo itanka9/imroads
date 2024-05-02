@@ -1,0 +1,32 @@
+<svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1244_8477)">
+<g filter="url(#filter0_d_1244_8477)">
+<circle cx="58" cy="58" r="50" fill="#F7B21B"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M92 80H23V84.5C23 86.984 25.208 89 27.9286 89H87.0714C89.792 89 92 86.984 92 84.5V80Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23 54H92V48H23V54Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M92 38.8873C92 38.8873 70.7702 34.9249 57.5 27C44.2298 34.9249 23 38.8873 23 38.8873V44H92V38.8873Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M55 34H60V15H55V34Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M60 21H70V15H60V21Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23 77H30V58H23V77Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M36 77H43V58H36V77Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 77H55V58H48V77Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M60 77H67V58H60V77Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M72 77H79V58H72V77Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M85 77H92V58H85V77Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_d_1244_8477" x="-3" y="-3" width="122" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="5.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1244_8477"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1244_8477" result="shape"/>
+</filter>
+<clipPath id="clip0_1244_8477">
+<rect width="116" height="116" fill="white"/>
+</clipPath>
+</defs>
+</svg>

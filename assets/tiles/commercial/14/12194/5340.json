@@ -1,0 +1,29 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    87.954574,
+                    52.951379
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "direction": {
+                    "coordinates": [
+                        87.9545745,
+                        52.9513765
+                    ],
+                    "type": "Point"
+                },
+                "building_id": "70030076308658732",
+                "db_sublayer": "Commercial_model",
+                "model_src": "/assets/models/mikhailovskiyext.glb",
+                "db_id": "70000001065167756",
+                "db_region": 3
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

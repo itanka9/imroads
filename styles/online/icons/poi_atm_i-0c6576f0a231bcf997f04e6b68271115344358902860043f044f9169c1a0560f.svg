@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="92px" height="92px" viewBox="0 0 92 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>poi_atm_i</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-76.000000, -611.000000)">
+            <g id="poi_atm_i" transform="translate(76.000000, 611.000000)">
+                <circle id="Oval-Shadow-1" fill-opacity="0.02" fill="#000000" cx="46" cy="46" r="46"></circle>
+                <circle id="Oval-Shadow-2" fill-opacity="0.02" fill="#000000" cx="46" cy="46" r="44"></circle>
+                <circle id="Oval-Shadow-3" fill-opacity="0.02" fill="#000000" cx="46" cy="46" r="42"></circle>
+                <circle id="Oval-Shadow-4" fill-opacity="0.02" fill="#000000" cx="46" cy="46" r="40"></circle>
+                <path d="M46,84 C66.9868,84 84,66.9868 84,46 C84,25.0132 66.9868,8 46,8 C25.0132,8 8,25.0132 8,46 C8,66.9868 25.0132,84 46,84 Z" id="Path" fill="#6DC234" fill-rule="nonzero"></path>
+                <path d="M23,30 C23,28.3431 24.3431,27 26,27 L66,27 C67.6569,27 69,28.3431 69,30 L69,33 C69,34.1046 69.8954,35 71,35 C72.1046,35 73,34.1046 73,33 L73,30 C73,26.134 69.866,23 66,23 L26,23 C22.134,23 19,26.134 19,30 L19,33 C19,34.1046 19.8954,35 21,35 C22.1046,35 23,34.1046 23,33 L23,30 Z M56,31 L27,31 L27,64 L56,64 L56,31 Z M36,67 L59,67 L59,31 L65,31 L65,67 L65,72 L59,72 L36,72 L36,67 Z M50,40 C50,43.3137 46.1944,46 41.5,46 C36.8056,46 33,43.3137 33,40 C33,36.6863 36.8056,34 41.5,34 C46.1944,34 50,36.6863 50,40 Z M33,55 C32.4477,55 32,55.4477 32,56 L32,57 C32,57.5523 32.4477,58 33,58 L37,58 C37.5523,58 38,57.5523 38,57 L38,56 C38,55.4477 37.5523,55 37,55 L33,55 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

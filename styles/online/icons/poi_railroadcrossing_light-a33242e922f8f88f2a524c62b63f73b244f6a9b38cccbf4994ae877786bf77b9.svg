@@ -1,0 +1,16 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 35C12.9106 35 10 37.9106 10 41.5C10 45.0894 12.9106 48 16.5 48C20.0894 48 23 45.0894 23 41.5C23 37.9106 20.0894 35 16.5 35ZM16.5 39.3333C17.6946 39.3333 18.6667 40.3054 18.6667 41.5C18.6667 42.6946 17.6946 43.6667 16.5 43.6667C15.3054 43.6667 14.3333 42.6946 14.3333 41.5C14.3333 40.3054 15.3054 39.3333 16.5 39.3333Z" stroke="white" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M43.5 35C39.9106 35 37 37.9106 37 41.5C37 45.0894 39.9106 48 43.5 48C47.0894 48 50 45.0894 50 41.5C50 37.9106 47.0894 35 43.5 35ZM43.5 39.3333C44.6946 39.3333 45.6667 40.3054 45.6667 41.5C45.6667 42.6946 44.6946 43.6667 43.5 43.6667C42.3054 43.6667 41.3333 42.6946 41.3333 41.5C41.3333 40.3054 42.3054 39.3333 43.5 39.3333Z" stroke="white" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 40H42V35H16V40Z" stroke="white" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.0007 6L27 8.96913V52H33V8.96913L30.0007 6Z" stroke="white" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21 54H39V49H21V54Z" stroke="white" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46 12.4L18.5716 30H14V25.6L41.4284 8H46V12.4Z" stroke="white" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46 25.6L18.5716 8H14V12.4L41.4284 30H46V25.6Z" stroke="white" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 35C12.9106 35 10 37.9106 10 41.5C10 45.0894 12.9106 48 16.5 48C20.0894 48 23 45.0894 23 41.5C23 37.9106 20.0894 35 16.5 35ZM16.5 39.3333C17.6946 39.3333 18.6667 40.3054 18.6667 41.5C18.6667 42.6946 17.6946 43.6667 16.5 43.6667C15.3054 43.6667 14.3333 42.6946 14.3333 41.5C14.3333 40.3054 15.3054 39.3333 16.5 39.3333Z" fill="#7A7A79"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M43.5 35C39.9106 35 37 37.9106 37 41.5C37 45.0894 39.9106 48 43.5 48C47.0894 48 50 45.0894 50 41.5C50 37.9106 47.0894 35 43.5 35ZM43.5 39.3333C44.6946 39.3333 45.6667 40.3054 45.6667 41.5C45.6667 42.6946 44.6946 43.6667 43.5 43.6667C42.3054 43.6667 41.3333 42.6946 41.3333 41.5C41.3333 40.3054 42.3054 39.3333 43.5 39.3333Z" fill="#7A7A79"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 40H42V35H16V40Z" fill="#7A7A79"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.0007 6L27 8.96913V52H33V8.96913L30.0007 6Z" fill="#7A7A79"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21 54H39V49H21V54Z" fill="#7A7A79"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46 12.4L18.5716 30H14V25.6L41.4284 8H46V12.4Z" fill="#7A7A79"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46 25.6L18.5716 8H14V12.4L41.4284 30H46V25.6Z" fill="#7A7A79"/>
+</svg>
