@@ -22,21 +22,32 @@ const outIconsPath = `${outdir}/icons`;
 const assetsPath = `./assets`;
 
 /** Стилевые настройки */
+// Зум, с которого появляется дорожно полотно
 const roadbedMinZoom = 16;
+// Зум, с которого появляется дорожная разметка
 const markingMinZoom = 16;
+// Зум, с которого появляются развязки
+// Развязки полявляются чуть раньше, чтобы на них еще рисовались оранжевые дороги, 
+// которые потом плавно перейдут в широкие
 const overpassMinZoom = 15;
 
 // Цвета
+// (все цвета пока должны быть в формате #RRGGBB, иначе скрипт некорректно отработает)
 const markingWhite = '#eeeeee';
 const markingYellow = '#FBED7A';
 const markingBlue = '#ccccff';
 const markingGray = '#cccccc';
 
+// Цвет асфальта
 const roadbedAsphalt = '#A09E9E';
+// Цвет насыпи
 const embankmentGreen = '#9AC78B';
 
+// Эта фунция плавно тушит цвет широких дорог и разметки, чтобы они превращались в обычные.
+// Если хочется сделать это быстрее, то можно заменить `zoom + 0.5` на к примеру  `zoom + 0.1`
 const fadeout = (color: string, zoom: number) => ['interpolate', ['linear'], ['zoom'], zoom, transparent(color), zoom + 0.5, color];
 
+// Превращает цвет в прозрачный, сохраняя цветовые компоненты.
 const transparent = (color: string) => color.slice(0, 7) + '00';
 
 const embankmentTextures: Record<string, string> = {

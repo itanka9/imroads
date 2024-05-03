@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "for name in styles/*; do ts-node convert.ts ${name##*/}; done",
+    "server": "http-server .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http-server": "^14.1.1",
     "ts-node": "^10.9.2"
   }
 }
