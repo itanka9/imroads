@@ -21,6 +21,7 @@
         <script src="https://jakarta.web-staging.2gis.ru/index.js"></script>
         <script>
             const style = 'online';
+            const origin = window.location.hostname === '127.0.0.1' ? '.' : self.origin;
             const map = new mapgl.Map('container', {
                 center: [37.625269, 55.749303],
                 zoom: 18,
@@ -30,14 +31,14 @@
                 enableTrackResize: true,
                 disableAntialiasing: false,
                 key: '4970330e-7f1c-4921-808c-0eb7c4e63001',
-                style: `./out/${style}/`,
+                style: `${self.origin}/out/${style}/`,
                 styleState: {
                     immersiveRoadsOn: true
                 },
                 styleOptions: {
-                    iconsPath: `./out/${style}/icons/`,
-                    fontsPath: `./out/${style}/fonts/`,
-                    modelsPath: `./out/${style}/models/`,
+                    iconsPath: `${self.origin}/out/${style}/icons/`,
+                    fontsPath: `${self.origin}/out/${style}/fonts/`,
+                    modelsPath: `${self.origin}/out/${style}/models/`,
                 }
             });
         </script>
