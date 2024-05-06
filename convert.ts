@@ -24,8 +24,12 @@ const assetsPath = `./assets`;
 /** Стилевые настройки */
 // Зум, с которого появляется дорожно полотно
 const roadbedMinZoom = 16;
-// Зум, с которого появляется дорожная разметка
+// Зум, до которого анимируется цвет
+const roadbedMaxZoom = 18;
+// Зум, с которого появляется основная дорожная разметка
 const markingMinZoom = 16;
+// Зум, с которого появляется дополнительная дорожная разметка
+const markingAddMinZoom = 17;
 // Зум, с которого появляются развязки
 // Развязки полявляются чуть раньше, чтобы на них еще рисовались оранжевые дороги, 
 // которые потом плавно перейдут в широкие
@@ -33,19 +37,23 @@ const overpassMinZoom = 15;
 
 // Цвета
 // (все цвета пока должны быть в формате #RRGGBB, иначе скрипт некорректно отработает)
-const markingWhite = '#eeeeee';
-const markingYellow = '#FBED7A';
-const markingBlue = '#ccccff';
-const markingGray = '#cccccc';
+const markingWhite = '#E0E0E0';
+const markingYellow = '#EBE74D';
+const markingBlue = '#E0E0E0';
+const markingGray = '#E0E0E0';
 
 // Цвет асфальта
-const roadbedAsphalt = '#A09E9E';
+const roadbedAsphalt = '#C7C7C7';
+const roadbedAsphaltDark = '#B3B3B3';
 // Цвет насыпи
 const embankmentGreen = '#9AC78B';
 
 // Эта фунция плавно тушит цвет широких дорог и разметки, чтобы они превращались в обычные.
 // Если хочется сделать это быстрее, то можно заменить `zoom + 0.5` на к примеру  `zoom + 0.1`
-const fadeout = (color: string, zoom: number) => ['interpolate', ['linear'], ['zoom'], zoom, transparent(color), zoom + 0.5, color];
+const fadeout = (color: string, zoom: number) => ['interpolate', ['linear'], ['zoom'], zoom, transparent(color), zoom + 0.1, color];
+
+// Константа для плавного изменения цвета
+const linearchangecolor = (color1: string, zoom1: number, color2: string, zoom2: number) => ['interpolate', ['linear'], ['zoom'], zoom1, transparent(color1), zoom1 + 0.1, color1, zoom2, color2];
 
 // Превращает цвет в прозрачный, сохраняя цветовые компоненты.
 const transparent = (color: string) => color.slice(0, 7) + '00';
@@ -61,50 +69,50 @@ const models: { [key: string]: string } = {
 };
 
 const laneIcons = {
-    '0': 'non-information',
-    '2': 'straight-0',
-    '4': 'right-0',
-    '6': 'straight-right-0-0',
-    '8': 'left-0',
-    '10': 'left-straight-0-0',
-    '12': 'left-right-0-0',
-    '14': 'left-straight-right-0-0-0',
-    '16': 'slightly_right-0',
-    '18': 'straight-slightly_right-0-0',
-    '20': 'slightly_right-right-0-0',
-    '24': 'left-slightly_right-0-0',
-    '32': 'slightly_left-0',
-    '34': 'slightly_left-straight-0-0',
-    '36': 'slightly_left-right-0-0',
-    '40': 'left-slightly_left-0-0',
-    '48': 'slightly_left-slightly_right-0-0',
-    '64': 'sharply_right-0',
-    '66': 'straight-sharply_right-0-0',
-    '68': 'right-sharply_right-0-0',
-    '80': 'slightly_right-sharply_right-0-0',
-    '96': 'slightly_left-sharply_right-0-0',
-    '128': 'sharply_left-0',
-    '130': 'sharply_left-straight-0-0',
-    '132': 'sharply_left-right-0-0',
-    '136': 'sharply_left-left-0-0',
-    '144': 'sharply_left-slightly_right-0-0',
-    '160': 'sharply_left-slightly_left-0-0',
-    '256': 'right_with_left_turn-0',
-    '258': 'straight-right_with_left_turn-0-0',
-    '1024': 'turnover-0',
-    '1026': 'straight-turnover-0-0',
-    '1028': 'right-turnover-0-0',
-    '1030': 'straight-right-turnover-0-0-0',
-    '1032': 'left-turnover-0-0',
-    '1034': 'left-straight-turnover-0-0-0',
-    '1040': 'slightly_right-turnover-0-0',
-    '1042': 'straight-slightly_right-turnover-0-0-0',
-    '1056': 'slightly_left-turnover-0-0',
-    '1058': 'slightly_left-straight-turnover-0-0-0',
-    '1088': 'sharply_right-turnover-0-0',
-    '1090': 'straight-sharply_right-turnover-0-0-0',
-    '1152': 'sharply_left-turnover-0-0',
-    '1154': 'sharply_left-straight-turnover-0-0-0',
+    //'0': 'non-information',
+    '2': 'immersive-straight',
+    '4': 'immersive-right',
+    '6': 'immersive-right-straight',
+    '8': 'immersive-left',
+    '10': 'immersive-left-straight',
+    '12': 'immersive-left-right',
+    '14': 'immersive-left-straight-right',
+    //'16': 'slightly_right-0',
+    //'18': 'straight-slightly_right-0-0',
+    //'20': 'slightly_right-right-0-0',
+    //'24': 'left-slightly_right-0-0',
+    //'32': 'slightly_left-0',
+    //'34': 'slightly_left-straight-0-0',
+    //'36': 'slightly_left-right-0-0',
+    //'40': 'left-slightly_left-0-0',
+    //'48': 'slightly_left-slightly_right-0-0',
+    '64': 'immersive-sharply-right',
+    //'66': 'straight-sharply_right-0-0',
+    //'68': 'right-sharply_right-0-0',
+    //'80': 'slightly_right-sharply_right-0-0',
+    //'96': 'slightly_left-sharply_right-0-0',
+    '128': 'immersive-sharply-left',
+    //'130': 'sharply_left-straight-0-0',
+    //'132': 'sharply_left-right-0-0',
+    //'136': 'sharply_left-left-0-0',
+    //'144': 'sharply_left-slightly_right-0-0',
+    //'160': 'sharply_left-slightly_left-0-0',
+    //'256': 'right_with_left_turn-0',
+    //'258': 'straight-right_with_left_turn-0-0',
+    '1024': 'immersive-turnover-left',
+    '1026': 'immersive-turnover-left-straight',
+    //'1028': 'right-turnover-0-0',
+    //'1030': 'straight-right-turnover-0-0-0',
+    //'1032': 'left-turnover-0-0',
+    //'1034': 'left-straight-turnover-0-0-0',
+    //'1040': 'slightly_right-turnover-0-0',
+    //'1042': 'straight-slightly_right-turnover-0-0-0',
+    //'1056': 'slightly_left-turnover-0-0',
+    //'1058': 'slightly_left-straight-turnover-0-0-0',
+    //'1088': 'sharply_right-turnover-0-0',
+    //'1090': 'straight-sharply_right-turnover-0-0-0',
+    //'1152': 'sharply_left-turnover-0-0',
+    //'1154': 'sharply_left-straight-turnover-0-0-0',
 };
 const directionsMatcher: any[] = ['match', ['get', 'db_lane_directions']];
 
@@ -118,22 +126,29 @@ const linearMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_Broken'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.1],
-            color: fadeout(markingWhite, markingMinZoom),
+            width: ['meters-to-pixels', 0.15],
+            color: fadeout(markingWhite, markingAddMinZoom),
             pattern: ['pattern', 'stripe', ['meters-to-pixels', 3], ['meters-to-pixels', 3]],
         },
-        minzoom: markingMinZoom,
+        minzoom: markingAddMinZoom,
     },
     LinearMarking_Double: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_Double'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.3],
+            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 2.4, 18, 0.6]],
             color: fadeout(markingWhite, markingMinZoom),
-            pattern: ['pattern', 'doubledash', 10, ['meters-to-pixels', 0.1], 10, 10],
+            pattern: [
+                'pattern',
+                'doubledash', 10,
+                ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
+                10,
+                10
+            ],
         },
         minzoom: markingMinZoom,
     },
+    /*
     LinearMarking_GiveWayLine: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_GiveWayLine'],
         type: 'line',
@@ -150,11 +165,12 @@ const linearMarking: any = {
         },
         minzoom: markingMinZoom,
     },
+    */
     LinearMarking_ParkingPlaces: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_ParkingPlaces'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.1],
+            width: ['meters-to-pixels', 0.15],
             color: fadeout(markingGray, markingMinZoom),
         },
         minzoom: markingMinZoom,
@@ -163,13 +179,13 @@ const linearMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_Reversal'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.3],
+            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 2.4, 18, 0.6]],
             color: fadeout(markingWhite, markingMinZoom),
             pattern: [
                 'pattern',
                 'doubledash',
                 ['meters-to-pixels', 4],
-                ['meters-to-pixels', 0.1],
+                ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
                 ['meters-to-pixels', 2],
                 ['meters-to-pixels', 4],
             ],
@@ -180,19 +196,20 @@ const linearMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_ReverseTraffic'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.3],
-            color: fadeout(markingWhite, markingMinZoom),
+            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 2.4, 18, 0.6]],
+            color: fadeout(markingWhite, markingAddMinZoom),
             pattern: [
                 'pattern',
                 'doubledash',
                 ['meters-to-pixels', 10],
-                ['meters-to-pixels', 0.1],
+                ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
                 ['meters-to-pixels', 5],
                 ['meters-to-pixels', 5],
             ],
         },
-        minzoom: markingMinZoom,
+        minzoom: markingAddMinZoom,
     },
+    /*
     LinearMarking_Roughness: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_Roughness'],
         type: 'line',
@@ -203,31 +220,32 @@ const linearMarking: any = {
         },
         minzoom: markingMinZoom,
     },
+    */
     LinearMarking_ShortIntermittentBlue: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_ShortIntermittentBlue'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.1],
-            color: fadeout(markingBlue, markingMinZoom),
+            width: ['meters-to-pixels', 0.15],
+            color: fadeout(markingBlue, markingAddMinZoom),
             pattern: ['pattern', 'stripe', ['meters-to-pixels', 0.5], ['meters-to-pixels', 0.5]],
         },
-        minzoom: markingMinZoom,
+        minzoom: markingAddMinZoom,
     },
     LinearMarking_ShortIntermittentWhite: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_ShortIntermittentWhite'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.1],
-            color: fadeout(markingWhite, markingMinZoom),
+            width: ['meters-to-pixels', 0.15],
+            color: fadeout(markingWhite, markingAddMinZoom),
             pattern: ['pattern', 'stripe', ['meters-to-pixels', 0.5], ['meters-to-pixels', 0.5]],
         },
-        minzoom: markingMinZoom,
+        minzoom: markingAddMinZoom,
     },
     LinearMarking_Solid: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_Solid'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.1],
+            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
             color: fadeout(markingWhite, markingMinZoom),
         },
         minzoom: markingMinZoom,
@@ -236,45 +254,56 @@ const linearMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_Stop'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.1],
-            color: fadeout(markingYellow, markingMinZoom),
+            width: ['meters-to-pixels', 0.15],
+            color: fadeout(markingYellow, markingAddMinZoom),
             geometryModifier: ['geometry-modifier', ['line-to-zigzag', 2, 2, false]],
         },
-        minzoom: markingMinZoom,
+        minzoom: markingAddMinZoom,
     },
     LinearMarking_StopLine: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_StopLine'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.3],
-            color: fadeout(markingWhite, markingMinZoom),
+            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
+            color: fadeout(markingWhite, markingAddMinZoom),
+            startCap: 'butt',
+            endCap: 'butt'
         },
-        minzoom: markingMinZoom,
+        minzoom: markingAddMinZoom,
     },
     LinearMarking_TramStop: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_TramStop'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.1],
-            color: fadeout(markingYellow, markingMinZoom),
+            width: ['meters-to-pixels', 0.15],
+            color: fadeout(markingYellow, markingAddMinZoom),
             geometryModifier: ['geometry-modifier', ['line-to-zigzag', 1, 1, false]],
         },
-        minzoom: markingMinZoom,
+        minzoom: markingAddMinZoom,
     },
     LinearMarking_TurnStraight: {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_TurnStraight'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', 0.3],
-            color: fadeout(markingWhite, markingMinZoom),
+            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 2.4, 18, 0.6]],
+            color: fadeout(markingWhite, markingAddMinZoom),
             pattern: [
                 'pattern',
                 'doubledash',
                 ['meters-to-pixels', 4],
-                ['meters-to-pixels', 0.1],
+                ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
                 ['meters-to-pixels', 4],
                 ['meters-to-pixels', 2],
             ],
+        },
+        minzoom: markingAddMinZoom,
+    },
+    LinearMarking_save_island_contour: {
+        filter: ['==', ['get', 'sublayer'], 'LinearMarking_save_island_contour'],
+        type: 'line',
+        style: {
+            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
+            color: fadeout(markingWhite, markingMinZoom),
         },
         minzoom: markingMinZoom,
     },
@@ -315,8 +344,56 @@ const pointMarking: any = {
             iconImage: directionsMatcher as any,
             color: fadeout(markingWhite, markingMinZoom),
             rotation: ['get', 'db_rotation_angle'],
-            width: 1,
-            height: 3,
+            width: 2.4,
+            height: 4.6,
+        },
+        minzoom: markingMinZoom,
+    },
+    PointMarkings_public_transport: {
+        type: 'metricPoint',
+        filter: ['==', ['get', 'sublayer'], 'PointMarkings_public_transport'],
+        style: {
+            iconImage: 'immersive-sign-bus-line',
+            color: fadeout(markingWhite, markingMinZoom),
+            rotation: ['get', 'db_rotation_angle'],
+            width: 1.8,
+            height: 3.2,
+        },
+        minzoom: markingMinZoom,
+    },
+    PointMarkings_ParkingHandicapped: {
+        type: 'metricPoint',
+        filter: ['==', ['get', 'sublayer'], 'PointMarkings_ParkingHandicapped'],
+        style: {
+            iconImage: 'immersive-sign-disabled-person',
+            color: fadeout(markingWhite, markingMinZoom),
+            rotation: ['get', 'db_rotation_angle'],
+            width: 2.2,
+            height: 3.2,
+        },
+        minzoom: markingMinZoom,
+    },
+    PointMarkings_ParkingElectricFilling: {
+        type: 'metricPoint',
+        filter: ['==', ['get', 'sublayer'], 'PointMarkings_ParkingElectricFilling'],
+        style: {
+            iconImage: 'immersive-sign-electroparking',
+            color: fadeout(markingWhite, markingMinZoom),
+            rotation: ['get', 'db_rotation_angle'],
+            width: 1.8,
+            height: 3.2,
+        },
+        minzoom: markingMinZoom,
+    },
+    PointMarkings_Triangle: {
+        type: 'metricPoint',
+        filter: ['==', ['get', 'sublayer'], 'PointMarkings_Triangle'],
+        style: {
+            iconImage: 'immersive-sign-give-way',
+            color: fadeout(markingWhite, markingMinZoom),
+            rotation: ['get', 'db_rotation_angle'],
+            width: 1.8,
+            height: 4.2,
         },
         minzoom: markingMinZoom,
     },
@@ -363,15 +440,15 @@ const overpassLayers: Record<string, any> = {
     Roadbed: {
         type: 'overpass',
         style: {
-            color: fadeout(roadbedAsphalt, roadbedMinZoom),
-            sideColor: ['interpolate', ['linear'], ['height'], 0, '#cfcfcf', 0.99, '#FCFBF2'],
+            color: linearchangecolor(roadbedAsphalt, roadbedMinZoom, roadbedAsphaltDark, roadbedMaxZoom),
+            sideColor: ['interpolate', ['linear'], ['height'], 0, '#A6A9AD', 0.99, '#D9D9D9'],
             thickness: 0.5,
             visibility: 'visible',
             borderWidth: 0.7,
-            bottomColor: '#CFCFCF',
-            strokeColor: '#C3C3C3',
+            bottomColor: '#A6A9AD',
+            strokeColor: '#D9D9D9',
             borderHeight: 0.3,
-            borderTopColor: '#FCFBF2',
+            borderTopColor: '#D9D9D9',
             nearCameraFade: 0,
         },
         filter: [
@@ -393,7 +470,7 @@ const roadbedLayers: Record<string, any> = {
     Roadbed: {
         type: 'polygon',
         style: {
-            color: fadeout(roadbedAsphalt, roadbedMinZoom),
+            color: linearchangecolor(roadbedAsphalt, roadbedMinZoom, roadbedAsphaltDark, roadbedMaxZoom),
             visibility: 'visible',
             strokeWidth: ['interpolate', ['linear'], ['zoom'], 16, 1, 19, 3],
         },
