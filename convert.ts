@@ -308,15 +308,6 @@ const linearMarking: any = {
         },
         minzoom: markingMinZoom,
     },
-    LinearMarking_save_island_contour: {
-        filter: ['==', ['get', 'sublayer'], 'LinearMarking_save_island_contour'],
-        type: 'line',
-        style: {
-            width: ['meters-to-pixels', 0.1],
-            color: fadeout(markingWhite, markingMinZoom),
-        },
-        minzoom: markingMinZoom,
-    }
 };
 
 const polygonMarking: any = {
