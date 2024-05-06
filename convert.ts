@@ -62,7 +62,7 @@ const embankmentTextures: Record<string, string> = {
     bricks: 'Visiwig-Bricks',
     dots: 'dust_texture',
     squares: 'protruding-squares',
-    yellow_net: 'yellow_net',
+    waffle3x: 'waffle3x',
 };
 
 const models: { [key: string]: string } = {
@@ -333,10 +333,10 @@ const polygonMarking: any = {
         style: {
             strokeColor: fadeout(markingYellow + '60', markingMinZoom),
             strokeWidth: ['meters-to-pixels', 0.1],
-            color: roadbedAsphalt,
-            textureSize: [200, 200],
-            textureImage: "yellow_net",
-            textureOpacity: 0.7
+            color: linearchangecolor(roadbedAsphalt, roadbedMinZoom, roadbedAsphaltDark, roadbedMaxZoom),
+            textureSize: [53, 53],
+            textureImage: "waffle3x",
+            textureOpacity: ['interpolate', ['linear'], ['zoom'], markingAddMinZoom + 0.1, 0, markingAddMinZoom, 1]
         },
         minzoom: markingMinZoom,
     },
