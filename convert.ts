@@ -62,6 +62,7 @@ const embankmentTextures: Record<string, string> = {
     bricks: 'Visiwig-Bricks',
     dots: 'dust_texture',
     squares: 'protruding-squares',
+    yellow_net: 'yellow_net',
 };
 
 const models: { [key: string]: string } = {
@@ -264,8 +265,8 @@ const linearMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'LinearMarking_StopLine'],
         type: 'line',
         style: {
-            width: ['meters-to-pixels', ['interpolate', ['linear'], ['zoom'], 16, 0.8, 18, 0.2]],
-            color: fadeout(markingWhite, markingAddMinZoom),
+            width: ['meters-to-pixels', 0.3],
+            color: fadeout(markingWhite, markingMinZoom),
             startCap: 'butt',
             endCap: 'butt'
         },
@@ -307,6 +308,15 @@ const linearMarking: any = {
         },
         minzoom: markingMinZoom,
     },
+    LinearMarking_save_island_contour: {
+        filter: ['==', ['get', 'sublayer'], 'LinearMarking_save_island_contour'],
+        type: 'line',
+        style: {
+            width: ['meters-to-pixels', 0.1],
+            color: fadeout(markingWhite, markingMinZoom),
+        },
+        minzoom: markingMinZoom,
+    }
 };
 
 const polygonMarking: any = {
@@ -330,7 +340,12 @@ const polygonMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'PolygonMarkings_waffle'],
         type: 'polygon',
         style: {
-            color: fadeout(markingYellow + '60', markingMinZoom),
+            strokeColor: fadeout(markingYellow + '60', markingMinZoom),
+            strokeWidth: ['meters-to-pixels', 0.1],
+            color: roadbedAsphalt,
+            textureSize: [200, 200],
+            textureImage: "yellow_net",
+            textureOpacity: 0.7
         },
         minzoom: markingMinZoom,
     },
