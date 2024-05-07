@@ -41,6 +41,7 @@ const markingWhite = '#E0E0E0';
 const markingYellow = '#EBE74D';
 const markingBlue = '#E0E0E0';
 const markingGray = '#E0E0E0';
+const markingPoint = '#FFFFFF';
 
 // Цвет асфальта
 const roadbedAsphalt = '#C7C7C7';
@@ -63,6 +64,11 @@ const embankmentTextures: Record<string, string> = {
     dots: 'dust_texture',
     squares: 'protruding-squares',
     waffle3x: 'waffle3x',
+    waffle: 'waffle',
+    'immersive-sign-give-way': 'immersive-sign-give-way',
+    'immersive-sign-electroparking': 'immersive-sign-electroparking',
+    'immersive-sign-disabled-person': 'immersive-sign-disabled-person', 
+    'immersive-sign-bus-line': 'immersive-sign-bus-line'
 };
 
 const models: { [key: string]: string } = {
@@ -130,6 +136,8 @@ const linearMarking: any = {
             width: ['meters-to-pixels', 0.15],
             color: fadeout(markingWhite, markingAddMinZoom),
             pattern: ['pattern', 'stripe', ['meters-to-pixels', 3], ['meters-to-pixels', 3]],
+            startCap: 'butt',
+            endCap: 'butt'
         },
         minzoom: markingAddMinZoom,
     },
@@ -146,6 +154,9 @@ const linearMarking: any = {
                 10,
                 10
             ],
+            startCap: 'butt',
+            endCap: 'butt'
+
         },
         minzoom: markingMinZoom,
     },
@@ -190,6 +201,8 @@ const linearMarking: any = {
                 ['meters-to-pixels', 2],
                 ['meters-to-pixels', 4],
             ],
+            startCap: 'butt',
+            endCap: 'butt'
         },
         minzoom: markingMinZoom,
     },
@@ -207,6 +220,8 @@ const linearMarking: any = {
                 ['meters-to-pixels', 5],
                 ['meters-to-pixels', 5],
             ],
+            startCap: 'butt',
+            endCap: 'butt'
         },
         minzoom: markingAddMinZoom,
     },
@@ -229,6 +244,8 @@ const linearMarking: any = {
             width: ['meters-to-pixels', 0.15],
             color: fadeout(markingBlue, markingAddMinZoom),
             pattern: ['pattern', 'stripe', ['meters-to-pixels', 0.5], ['meters-to-pixels', 0.5]],
+            startCap: 'butt',
+            endCap: 'butt'
         },
         minzoom: markingAddMinZoom,
     },
@@ -239,6 +256,8 @@ const linearMarking: any = {
             width: ['meters-to-pixels', 0.15],
             color: fadeout(markingWhite, markingAddMinZoom),
             pattern: ['pattern', 'stripe', ['meters-to-pixels', 0.5], ['meters-to-pixels', 0.5]],
+            startCap: 'butt',
+            endCap: 'butt'
         },
         minzoom: markingAddMinZoom,
     },
@@ -296,6 +315,8 @@ const linearMarking: any = {
                 ['meters-to-pixels', 4],
                 ['meters-to-pixels', 2],
             ],
+            startCap: 'butt',
+            endCap: 'butt'
         },
         minzoom: markingAddMinZoom,
     },
@@ -334,9 +355,9 @@ const polygonMarking: any = {
             strokeColor: fadeout(markingYellow + '60', markingMinZoom),
             strokeWidth: ['meters-to-pixels', 0.1],
             color: linearchangecolor(roadbedAsphalt, roadbedMinZoom, roadbedAsphaltDark, roadbedMaxZoom),
-            textureSize: [53, 53],
-            textureImage: "waffle3x",
-            textureOpacity: ['interpolate', ['linear'], ['zoom'], markingAddMinZoom + 0.1, 0, markingAddMinZoom, 1]
+            textureSize: [51, 51],
+            textureImage: "waffle",
+            textureOpacity: ['interpolate', ['linear'], ['zoom'], markingAddMinZoom + 0.1, 0, markingAddMinZoom, 0.7]
         },
         minzoom: markingMinZoom,
     },
@@ -348,7 +369,7 @@ const pointMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'PointMarkings_lane_directions'],
         style: {
             iconImage: directionsMatcher as any,
-            color: fadeout(markingWhite, markingMinZoom),
+            color: fadeout(markingPoint, markingMinZoom),
             rotation: ['get', 'db_rotation_angle'],
             width: 2.4,
             height: 4.6,
@@ -360,7 +381,7 @@ const pointMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'PointMarkings_public_transport'],
         style: {
             iconImage: 'immersive-sign-bus-line',
-            color: fadeout(markingWhite, markingMinZoom),
+            color: fadeout(markingPoint, markingMinZoom),
             rotation: ['get', 'db_rotation_angle'],
             width: 1.8,
             height: 3.2,
@@ -372,7 +393,7 @@ const pointMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'PointMarkings_ParkingHandicapped'],
         style: {
             iconImage: 'immersive-sign-disabled-person',
-            color: fadeout(markingWhite, markingMinZoom),
+            color: fadeout(markingPoint, markingMinZoom),
             rotation: ['get', 'db_rotation_angle'],
             width: 2.2,
             height: 3.2,
@@ -384,7 +405,7 @@ const pointMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'PointMarkings_ParkingElectricFilling'],
         style: {
             iconImage: 'immersive-sign-electroparking',
-            color: fadeout(markingWhite, markingMinZoom),
+            color: fadeout(markingPoint, markingMinZoom),
             rotation: ['get', 'db_rotation_angle'],
             width: 1.8,
             height: 3.2,
@@ -396,7 +417,7 @@ const pointMarking: any = {
         filter: ['==', ['get', 'sublayer'], 'PointMarkings_Triangle'],
         style: {
             iconImage: 'immersive-sign-give-way',
-            color: fadeout(markingWhite, markingMinZoom),
+            color: fadeout(markingPoint, markingMinZoom),
             rotation: ['get', 'db_rotation_angle'],
             width: 1.8,
             height: 4.2,
@@ -418,28 +439,6 @@ const overpassLayers: Record<string, any> = {
             'all',
             ['match', ['global', 'immersiveRoadsOn'], [true], true, false],
             ['match', ['get', 'sublayer'], ['Embankment_polygon'], true, false],
-        ],
-        minzoom: overpassMinZoom
-    },
-    RoadSupport: {
-        type: 'model',
-        style: {
-            scale: [
-                'literal',
-                [
-                    1,
-                    1,
-                    ['+', ['*', ['get', 'db_nominal_height'], ['*', ['get', 'db_level'], 5]], -0.3],
-                ],
-            ],
-            modelSrc: 'pillar',
-            rotation: ['literal', [0, 0, ['get', 'db_rotation_angle']]],
-            nearCameraFade: 1000,
-        },
-        filter: [
-            'all',
-            ['match', ['global', 'immersiveRoadsOn'], [true], true, false],
-            ['match', ['get', 'db_sublayer'], ['Road_support', 'Road_support_new'], true, false],
         ],
         minzoom: overpassMinZoom
     },
@@ -467,6 +466,28 @@ const overpassLayers: Record<string, any> = {
                 true,
                 false,
             ],
+        ],
+        minzoom: overpassMinZoom
+    },
+    RoadSupport: {
+        type: 'model',
+        style: {
+            scale: [
+                'literal',
+                [
+                    1,
+                    1,
+                    ['+', ['*', ['get', 'db_nominal_height'], ['*', ['get', 'db_level'], 5]], -0.3],
+                ],
+            ],
+            modelSrc: 'pillar',
+            rotation: ['literal', [0, 0, ['get', 'db_rotation_angle']]],
+            nearCameraFade: 1000,
+        },
+        filter: [
+            'all',
+            ['match', ['global', 'immersiveRoadsOn'], [true], true, false],
+            ['match', ['get', 'db_sublayer'], ['Road_support', 'Road_support_new'], true, false],
         ],
         minzoom: overpassMinZoom
     },
