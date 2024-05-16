@@ -11,6 +11,8 @@ const execSync = require('child_process').execSync;
 
 const styleName = process.argv[2];
 
+const roadsGroupId = '515493';
+
 const srcdir = `./styles/${styleName}`;
 const modelsPath = `${srcdir}/models`;
 const iconsPath = `${srcdir}/icons`;
@@ -558,6 +560,9 @@ function patchImmersiveStyle() {
             layer.layers = [];
             for (const sublayer of sublayers) {
                 layer.layers.push(sublayer);
+                if (layer.id === roadsGroupId) {
+                    sublayer.ignoreTier = ['match', ['get', 'db_has_immersive_counterpart'], [1], false, true];
+                }
                 checkAndInjectSlots(sublayer.id, slotLayers, layer.layers);
             }
         }
