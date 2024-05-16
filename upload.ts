@@ -18,7 +18,7 @@ if (!styleId) {
 }
 
 uploadStyle(styleId).catch((error) => {
-    console.error(`STYLE DOWNLOAD ERROR: ${String(error)}`);
+    console.error(`STYLE UPLOAD ERROR: ${String(error)}`);
 });
 
 /**
