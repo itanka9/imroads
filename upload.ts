@@ -7,7 +7,8 @@ const stylesEndpoint = 'https://styles-editor.api.2gis.com';
 const styleName = process.argv[2];
 
 const uploadIds: Record<string, string> = {
-    online: '9c73b6cf-5d37-44a2-9a3e-68737b72d9a4'
+    online: '9c73b6cf-5d37-44a2-9a3e-68737b72d9a4'  // Демка онлайна
+    // online: 'cd0e62bf-05c1-4471-a28b-c001df9ae4e1' // ЦОДД
 }
 
 const styleId = uploadIds[styleName];

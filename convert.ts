@@ -11,7 +11,9 @@ const execSync = require('child_process').execSync;
 
 const styleName = process.argv[2];
 
-const roadsGroupId = '515493';
+const roadsGroupIds = ['515493', '764094'];
+
+const transportPoiGroupIds = ['968271', '386558', '676527'];
 
 const srcdir = `./styles/${styleName}`;
 const modelsPath = `${srcdir}/models`;
@@ -560,8 +562,16 @@ function patchImmersiveStyle() {
             layer.layers = [];
             for (const sublayer of sublayers) {
                 layer.layers.push(sublayer);
-                if (layer.id === roadsGroupId) {
+                // Отключить комм POI (для ЦОДД)
+                // if (JSON.stringify(sublayer.filter ?? []).indexOf('Commercial_poi') !== -1) {
+                //     sublayer.style.visibility = 'none';
+                // }
+                if (roadsGroupIds.includes(layer.id)) {
                     sublayer.ignoreTier = ['match', ['get', 'db_has_immersive_counterpart'], [1], false, true];
+                }
+                if (transportPoiGroupIds.includes(layer.id)) {
+                    sublayer.style.allowElevation = true;
+                    sublayer.style.elevation = ['get', 'db_nominal_height'];
                 }
                 checkAndInjectSlots(sublayer.id, slotLayers, layer.layers);
             }
